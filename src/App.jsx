@@ -40,6 +40,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="register" element={<Register />} />
             <Route path="login" element={<Login />} />
+            <Route path='purchase' element={<PurchasePage />} />
             <Route path='password-reset' element={<PasswordReset/>}/>
             <Route path='forgot-password/:id' element={<ForgotPassword/>}/>
             <Route element={<RequireAuth user={user} />}>
