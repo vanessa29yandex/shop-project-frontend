@@ -43,7 +43,7 @@ const Products = () => {
 
       setCartItems(updateCartItems);
     } else {
-      setCartItems((prev) => [...prev, { ...item, quantity: +1 }]);
+      setCartItems((prev) => [...prev, { ...item, quantity: 1 }]);
     }
   };
 
