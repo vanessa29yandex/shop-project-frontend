@@ -3,7 +3,6 @@ import { CartContext } from "../../context/CartContext";
 import {
   Badge,
   Button,
-  Flex,
   Heading,
   Image,
   Modal,
@@ -29,7 +28,6 @@ const ShoppingCart = ({ sx, variant }) => {
   const [totalProducts, setTotalPoducts] = useState(null);
   const [totalPrice, setTotalPrice] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log(isOpen);
   const addToCart = (item) => {
     const isItemExist = cartItems.find((cartItem) => cartItem._id === item._id);
     if (isItemExist) {
@@ -176,9 +174,8 @@ const ShoppingCart = ({ sx, variant }) => {
               </Heading>
             )}
           </ModalBody>
+          {cartItems.length !== 0 && (
           <ModalFooter p={3} justifyContent="space-between">
-            {cartItems.length !== 0 && (
-              <>
                 <Button
                   onClick={onClose}
                   as={Link}
@@ -190,9 +187,8 @@ const ShoppingCart = ({ sx, variant }) => {
                 <Button colorScheme="yellow" onClick={resetCart}>
                   Empty Cart
                 </Button>
-              </>
+                </ModalFooter>
             )}
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
