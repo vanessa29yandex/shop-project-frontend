@@ -174,7 +174,6 @@ const ShoppingCart = ({ sx, variant }) => {
               </Heading>
             )}
           </ModalBody>
-          {cartItems.length !== 0 && (
           <ModalFooter p={3} justifyContent="space-between">
                 <Button
                   onClick={onClose}
