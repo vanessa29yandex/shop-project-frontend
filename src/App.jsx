@@ -11,6 +11,7 @@ import About from "./pages/Public/About";
 import Contact from "./pages/Public/Contact";
 import Register from "./pages/Public/Register";
 import Login from "./pages/Public/Login";
+import PurchasePage from "./pages/Public/PurchasePage"
 import Profile from "./pages/Private/Profile";
 import RequireAuth from "./utils/RequireAuth";
 import AuthContext from "./context/AuthContext";
