@@ -95,7 +95,7 @@ const ShoppingCart = ({ sx, variant }) => {
         variant={variant}
         position="relative"
       >
-        {totalProducts && totalProducts !== 0 ? (
+        { totalProducts !== 0 ? (
           <Badge
             fontSize="sm"
             colorScheme="purple"
@@ -174,7 +174,8 @@ const ShoppingCart = ({ sx, variant }) => {
               </Heading>
             )}
           </ModalBody>
-          <ModalFooter p={3} justifyContent="space-between">
+            {cartItems.length !== 0 && (
+             <ModalFooter p={3} justifyContent="space-between">
                 <Button
                   onClick={onClose}
                   as={Link}
@@ -186,8 +187,8 @@ const ShoppingCart = ({ sx, variant }) => {
                 <Button colorScheme="yellow" onClick={resetCart}>
                   Empty Cart
                 </Button>
-                </ModalFooter>
-            )}
+          </ModalFooter>
+          )}
         </ModalContent>
       </Modal>
     </>
