@@ -22,7 +22,8 @@ import ProductPage, {
 import ErrorPage from "./pages/ErrorElement/ErrorElement";
 import PasswordReset from "./pages/Public/PasswordReset";
 import ForgotPassword from "./pages/Public/ForgotPassword";
-import SuccessPage from "./pages/Public/RejectedPage";
+import RejectedPage from "./pages/Public/RejectedPage";
+import SuccessPage from "./pages/Public/SuccessPage";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -44,6 +45,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path='purchase' element={<PurchasePage />} />
             <Route path='success-payment' element={<SuccessPage />} />
+            <Route path='reject-payment' element={<RejectedPage />} />
             <Route path='password-reset' element={<PasswordReset/>}/>
             <Route path='forgot-password/:id' element={<ForgotPassword/>}/>
             <Route element={<RequireAuth user={user} />}>

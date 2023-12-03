@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "../../../api/axios";
 import { useLoaderData } from "react-router-dom";
-import { Box, Text, Heading, Flex, Divider, SimpleGrid, InputGroup } from "@chakra-ui/react";
+import { Box, Text, Heading, Input, InputRightElement, Divider, SimpleGrid, InputGroup, Center } from "@chakra-ui/react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import {CartContext} from "../../../context/CartContext";
 import { useContext } from "react";
@@ -81,7 +81,7 @@ const Products = () => {
         exercitationem eveniet consequatur
       </Text>
       <Heading my={5}>Products</Heading>
-      <Divider />
+      <Center>
       <InputGroup maxW={480}>
         <Input 
         placeholder='search by name or description'
@@ -91,6 +91,8 @@ const Products = () => {
           <BiSearch/>
         </InputRightElement>
       </InputGroup>
+      </Center>
+      <Divider />
       <SimpleGrid my={4}
         spacing={4}
         justifyContent='center'

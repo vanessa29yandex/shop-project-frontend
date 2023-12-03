@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SuccessPage = () => {
+const RejectedPage = () => {
   // navigate button back to purchase
   // update payment with previous payemnt id
 
@@ -12,4 +12,4 @@ const SuccessPage = () => {
   );
 };
 
-export default SuccessPage;
+export default RejectedPage;
