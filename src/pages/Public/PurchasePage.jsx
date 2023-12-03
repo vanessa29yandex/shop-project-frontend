@@ -45,6 +45,8 @@ const PurchasePage = () => {
     cvv: '',
   });
 
+  const { user_avatar, ...userDetails } = user?.user;
+
   const cartDetails = cartItems.map(
     ({ product_image, ...restOfItem }) => restOfItem,
   );
@@ -93,7 +95,7 @@ const PurchasePage = () => {
       const {
         data: { paymentStatus },
       } = await axios.post(`/payments/pay`, {
-        user,
+        userDetails,
         cartDetails,
         cartTotal: totalPrice,
         creditNumber: credit,
