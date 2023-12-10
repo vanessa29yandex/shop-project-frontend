@@ -40,12 +40,14 @@ const PurchasePage = () => {
   });
 
   const [paymentValues, setPaymentValues] = useState({
-    credit: '',
-    expDate: '',
-    cvv: '',
+    credit: '4111111111111111',
+    expDate: '12/24',
+    cvv: '357',
   });
 
-  const { user_avatar, ...userDetails } = user?.user;
+  const userDetails = user?.user
+    ? (({ user_avatar, ...rest }) => rest)(user.user)
+    : {};
 
   const cartDetails = cartItems.map(
     ({ product_image, ...restOfItem }) => restOfItem,
@@ -126,10 +128,13 @@ const PurchasePage = () => {
       });
       console.log(paymentStatus);
 
-      // setPayments(paymentStatus);
-      window.location.href = paymentStatus.redirectUrl;
+     if (paymentStatus.redirtectURL !=='')
+        return(window.location.href = paymentStatus.redirectUrl);
+
+      return navigate(`/success-payment?token=${paymentStatus.token}`)
     } catch (error) {
       toast.error(error.response.data.message);
+      navigate('/rejected-payment')
     }
   };
 
